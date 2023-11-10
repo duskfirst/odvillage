@@ -79,6 +79,7 @@ const rockBtn = document.createElement("button");
 const paperBtn = document.createElement("button");
 const sciBtn = document.createElement("button");
 
+
 rockBtn.innerHTML = 'ROCK';
 paperBtn.innerHTML = 'PAPER';
 sciBtn.innerHTML = 'SCISSOR';
@@ -88,6 +89,9 @@ const div = document.createElement('div');
 const span = document.createElement('span');
 const score = document.createElement('span');
 
+span.style.display = 'block';
+score.style.display = 'block';
+
 div.appendChild(rockBtn);
 div.appendChild(paperBtn);
 div.appendChild(sciBtn);
@@ -95,6 +99,12 @@ div.appendChild(score);
 div.appendChild(span);
 
 body.appendChild(div);
+
+const button = document.createElement('button');
+
+button.style.display = 'inline';
+
+div.style.padding = '10px';
 
 rockBtn.addEventListener('click', ()=>{
     playRound('Rock', getComputerChoice());
@@ -104,7 +114,7 @@ rockBtn.addEventListener('click', ()=>{
 
 paperBtn.addEventListener('click', ()=>{
     playRound('Paper', getComputerChoice());
-        
+    
     score.innerText = playerScore.toString(); 
     check();
 });
